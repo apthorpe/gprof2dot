@@ -111,6 +111,11 @@ This is the result from the [example data](http://linuxgazette.net/100/misc/vina
 
 ### oprofile
 
+    operf -g /path/to/your/executable arg1 arg2
+    opreport -cgf | gprof2dot.py -f oprofile | dot -Tpng -o output.png
+
+Alternatively, using opcontrol (legacy):
+
     opcontrol --callgraph=16
     opcontrol --start
     /path/to/your/executable arg1 arg2
